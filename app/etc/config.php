@@ -326,6 +326,8 @@ return [
         'Vertex_Tax' => 1,
         'Vertex_AddressValidationApi' => 1,
         'Vertex_AddressValidation' => 1,
+        'Wbcom_Core' => 1,
+        'Wbcom_Whatsapp' => 1,
         'WolfSellers_EnableDisableTfa' => 1,
         'Yotpo_Yotpo' => 1
     ]

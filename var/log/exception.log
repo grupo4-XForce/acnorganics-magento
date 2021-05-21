@@ -1,0 +1,1 @@
+[2021-05-20 13:22:34] main.CRITICAL: Specified invalid parent id (Wbcom_Core::Wbcom) {"exception":"[object] (OutOfRangeException(code: 0): Specified invalid parent id (Wbcom_Core::Wbcom) at /var/www/html/vendor/magento/module-backend/Model/Menu/Builder.php:83)"} []

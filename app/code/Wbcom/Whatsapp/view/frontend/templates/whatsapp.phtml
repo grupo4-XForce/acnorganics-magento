@@ -1,0 +1,80 @@
+<?php
+$baseUrl = $this->getBaseUrl();
+$coreConfig = $this->getCoreConfigData();
+$status = $this->getModuleStatus();
+$baseMediaPath = $this->getBaseMediaPath();
+?>
+<?php if ($status != 0) {?>
+    <!-- codes for whatsapp chat icon -->
+    <?php if((isset($coreConfig['icon_position'])) && (!empty($coreConfig['icon_position'])) && ($coreConfig['icon_position'] != 'right')) {?>
+        <div class="whatsapp-chat-main whatsapp-chat-left <?php if((isset($coreConfig['mobile_view'])) && (!empty($coreConfig['mobile_view'] != 1))){ echo 'wbcom-mobile-view';}?>" style="bottom:<?= $coreConfig['icon_position_bottom'];?>;left:<?= $coreConfig['icon_position_left'];?>; !important;">
+    <?php } else{?>
+            <div class="whatsapp-chat-main whatsapp-chat-right <?php if((isset($coreConfig['mobile_view'])) && (!empty($coreConfig['mobile_view'] != 1))){ echo 'wbcom-mobile-view';}?>" style="bottom:<?= $coreConfig['icon_position_bottom'];?>;right:<?= $coreConfig['icon_position_right'];?>; !important;">
+    <?php }?>
+        <div class="whatsapp-icon">
+            <span class="wbcom-whatsapp-image" id="wbcom-whatsapp-icon" style="background-color: <?=$coreConfig['btn_color'];?> !important;">
+                <div class="button-pulse-animate" style="border-color: <?=$coreConfig['btn_color'];?> !important;"></div>
+                <?php if((isset($coreConfig['icon']))
+                    && (!empty($coreConfig['icon']))) {?>
+                    <img src="<?php echo $baseMediaPath.'whatsapp/'.$coreConfig['icon']; ?>" alt="whatsapp-chat" onclick="whatsAppOpenForm()">
+                <?php } else {?>
+                    <img src="<?php echo $this->getViewFileUrl('Wbcom_Whatsapp::images/wbcom-whatsapp-image.png'); ?>" alt="whatsapp-chat" onclick="whatsAppOpenForm()">
+                <?php }?>
+            </span>
+            <span class="wbcom-whatsapp-image" id="wbcom-whatsapp-close-icon" style="background-color: <?=$coreConfig['btn_color'];?>; display: none; !important;">
+                <img src="<?php echo $this->getViewFileUrl('Wbcom_Whatsapp::images/close.png'); ?>" alt="whatsapp-chat-close" onclick="whatsAppCloseForm()">
+            </span>
+        </div>
+        <!-- codes for pop-up form -->
+        <?php if((isset($coreConfig['icon_position'])) && (!empty($coreConfig['icon_position'])) && ($coreConfig['icon_position'] != 'right')) {?>
+            <div class="form-popup wbcom-popup-left" id="myForm">
+        <?php } else {?>
+            <div class="form-popup wbcom-popup-right" id="myForm">
+        <?php }?>
+            <form method="get" action="<?= $baseUrl.'wbcomwhatsapp/visitors/index';?>" class="form-container">
+                <div class="wbcom-header-top" style="background-color: <?=$coreConfig['header'];?> !important;">
+                    <h3 class="wbcom-whatsapp-chat-heading">
+                        <?php if((isset($coreConfig['title'])) && (!empty($coreConfig['title']))) {?>
+                            <?= $coreConfig['title'];?>
+                        <?php } else{?>
+                            <?= 'Chat With Us'?>
+                        <?php }?>
+                    </h3>
+                    <?php if((isset($coreConfig['greeting_message'])) && (!empty($coreConfig['greeting_message']))) {?>
+                        <span class="wbcom-greeting-chat-msg">
+                        <?= $coreConfig['greeting_message'];?>
+                    </span>
+                    <?php }?>
+                </div>
+                <div class="wbcom-fields">
+                    <div class="wbcom-fields-contents">
+                        <input name="form_key" type="hidden" value="<?php echo $block->getFormKey();?>">
+                        <input type="text" placeholder="Mark Alen" name="name" required style="background-color: <?=$coreConfig['popup_inner'];?> !important;">
+                        <input type="email" placeholder="markalen@gmail.com" name="email" required style="background-color: <?=$coreConfig['popup_inner'];?> !important;">
+                        <input type="hidden" name="message" value="<?= $coreConfig['msg'];?>">
+                        <input type="hidden" name="mobile" value="<?= $coreConfig['mobile'];?>">
+                    </div>
+                    <div class="chat-whatsapp-button">
+                        <button type="submit" class="btn" style="background-color: <?=$coreConfig['btn_color'];?> !important;"><?= 'Start Chat'?></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- js code for open and close form pop-up -->
+    <script>
+        function whatsAppOpenForm() {
+            document.getElementById("myForm").style.display = "block";
+            document.getElementById("wbcom-whatsapp-close-icon").style.display = "block";
+            document.getElementById("wbcom-whatsapp-icon").style.display = "none";
+        }
+        function whatsAppCloseForm() {
+            document.getElementById("myForm").style.display = "none";
+            document.getElementById("wbcom-whatsapp-close-icon").style.display = "none";
+            document.getElementById("wbcom-whatsapp-icon").style.display = "block";
+        }
+    </script>
+<?php }?>
+
+
