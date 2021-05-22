@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Wbcom_Whatsapp::whatsapp" title="WhatsApp Chat"
+             translate="title" module="Wbcom_Whatsapp"
+             parent="Wbcom_Core::Wbcom" sortOrder="11"
+             resource="Wbcom_Whatsapp::whatsapp" dependsOnConfig="wbcomwhatsapp/general/enable"/>
+
+        <add id="Wbcom_Whatsapp::manage_whatsappuser"
+             title="Manage Visitors" translate="title"
+             sortOrder="12" module="Wbcom_Whatsapp"
+             parent="Wbcom_Whatsapp::whatsapp"
+             action="wbcomwhatsapp/user/index"
+             resource="Wbcom_Whatsapp::manage_whatsappuser"/>
+
+        <add id="Wbcom_Whatsapp::whatsapp_config"
+             title="WhatsApp Chat Configuration" module="Wbcom_Whatsapp"
+             sortOrder="13" parent="Wbcom_Whatsapp::whatsapp"
+             action="adminhtml/system_config/edit/section/wbcomwhatsapp"
+             resource="Wbcom_Whatsapp::config_wbcom"/>
+    </menu>
+</config>

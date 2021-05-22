@@ -1,0 +1,193 @@
+.wbcom-whatsapp-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    text-align: center;
+    background: #00a82d;
+    padding: 15px;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.3);
+    line-height: 55px;
+    cursor: pointer;
+    display: block;
+}
+#wbcom-whatsapp-icon img {
+    margin-top: 5px;
+}
+.wbcom-whatsapp-image:hover img {
+    opacity: 0.8;
+}
+#wbcom-whatsapp-close-icon img {
+    padding: 5px;
+}
+.whatsapp-chat-main {
+    position: fixed;
+    z-index: 9999;
+    animation: .25s ease !important;
+}
+.whatsapp-icon {
+    position: absolute;
+    bottom: 0;
+}
+.wbcom-popup-left {
+    display: none;
+    z-index: 9999;
+    transform: translateY(-38%);
+    animation: fade-out 1s;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.18);
+    border-radius: 8px;
+}
+.wbcom-popup-right {
+    display: none;
+    z-index: 9999;
+    transform: translateY(-38%);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.18);
+    border-radius: 8px;
+    animation: fade-out 1s;
+}
+@keyframes fade-out {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.whatsapp-chat-right .whatsapp-icon {
+    right: 0;
+}
+.form-container {
+    max-width: 300px;
+    background: #fff;
+    border-radius: 10px;
+}
+.wbcom-header-top {
+    background:#00a82d;
+    padding: 20px 20px 40px;
+    border-radius: 8px 8px 0 0;
+}
+h3.wbcom-whatsapp-chat-heading {
+    margin: 0px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+.wbcom-greeting-chat-msg {
+    color: #fff;
+}
+.wbcom-fields {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: -20px;
+}
+.wbcom-fields-contents {
+
+}
+.form-container .cancel {
+    background-color: red;
+    margin-left: 70px;
+}
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+.form-container input[type=text],
+.form-container input[type=email] {
+    margin: 0px 0 12px 0;
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #d0d0d0;
+    border-radius:4px;
+    transition: 0.2s;
+    height: 40px;
+    box-shadow: none !important;
+}
+.form-container input[type=text]::placeholder,
+.form-container input[type=email]::placeholder {
+    color: #444;
+}
+.form-container input[type=text]:focus,
+.form-container input[type=email]:focus {
+    background:#f7f7f7;
+    outline: none;
+    box-shadow: none !important;
+}
+.form-container .btn {
+    background-color: #00a82d;
+    color: #fff;
+    border-radius:4px;
+    padding: 6px 10px;
+    text-align: center;
+    display: block;
+    border: none;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+    transition: 0.2s;
+    box-shadow: none;
+}
+.form-container .btn:hover {
+    opacity: 1;
+}
+
+@-webkit-keyframes widgetPulse {
+
+    50% {
+        -webkit-transform: scale(1,1);
+        transform: scale(1,1);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(2,2);
+        transform: scale(2,2);
+        opacity: 0;
+    }
+
+}
+@keyframes widgetPulse {
+
+    50% {
+        -webkit-transform: scale(1,1);
+        transform: scale(1,1);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(2,2);
+        transform: scale(2,2);
+        opacity: 0;
+    }
+
+}
+.button-pulse-animate {
+    -webkit-animation: widgetPulse infinite 1.5s;
+    animation: widgetPulse infinite 1.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 1px solid;
+    opacity: 0.2 !important;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+/*Responsive Css*/
+@media only screen and (max-width: 640px) {
+
+    .wbcom-mobile-view {
+        display: none;
+    }
+
+}

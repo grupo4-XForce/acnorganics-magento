@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Wbcom_Whatsapp::css/wbcomwhatsapp.css"/>
+    </head>
+    <referenceContainer name="before.body.end">
+        <block class="Wbcom\Whatsapp\Block\Index" 
+           	template="Wbcom_Whatsapp::whatsapp.phtml"
+        	before="before.body.end"
+        	name="wbcom-chat"/>
+    </referenceContainer>
+</page>
