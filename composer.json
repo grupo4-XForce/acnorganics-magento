@@ -17,6 +17,7 @@
         "magento/product-community-edition": "2.4.2",
         "mercadopago/magento2-plugin": "3.*",
         "moip/magento2": "^2.0",
+        "wbcomdesigns/module-core": "dev-master",
         "wolfsellers/module-enabledisabletfa": "^1.0"
     },
     "autoload": {
