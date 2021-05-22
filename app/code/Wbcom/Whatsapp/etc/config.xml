@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <wbcomwhatsapp>
+            <general>
+                <enable>1</enable>
+                <enable_mobile>1</enable_mobile>
+                <title>Chat With Us</title>
+                <greeting_message>Hey Hii,
+                    Welcome to Wbcom Designs !!!</greeting_message>
+                <message>Hello! I need your help</message>
+                <mobile_no>+918423211365</mobile_no>
+            </general>
+            <popup>
+                <header_back>#00a82d</header_back>
+                <field_inner>#fff</field_inner>
+                <btn_color>#00a82d</btn_color>
+            </popup>
+            <icon>
+                <icon_position>right</icon_position>
+                <icon_position_bottom>30px</icon_position_bottom>
+                <icon_position_right>30px</icon_position_right>
+                <icon_position_left>30px</icon_position_left>
+            </icon>
+        </wbcomwhatsapp>
+    </default>
+</config>
