@@ -17,6 +17,9 @@
         "magento/product-community-edition": "2.4.2",
         "mercadopago/magento2-plugin": "3.*",
         "moip/magento2": "^2.0",
+        "swissup/absolute-metapackage": "^1.3",
+        "swissup/module-marketplace": "^1.8",
+        "wbcomdesigns/module-core": "dev-master",
         "wolfsellers/module-enabledisabletfa": "^1.0"
     },
     "autoload": {
@@ -72,12 +75,20 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        },
+        "swissuplabs": {
+            "type": "composer",
+            "url": "https://ci.swissuplabs.com/api/packages.json"
+        },
+        "magento": {
             "type": "composer",
             "url": "https://repo.magento.com/"
         }
-    ],
+    },
     "extra": {
         "magento-force": "override"
     }

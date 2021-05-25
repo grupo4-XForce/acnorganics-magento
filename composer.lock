@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e300e392386499e2c4dbe32be98649d0",
+    "content-hash": "d9d9c9952259e13e8a694ffea56d8fc8",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -18686,6 +18686,287 @@
             "time": "2020-01-28T09:24:19+00:00"
         },
         {
+            "name": "swissup/absolute-metapackage",
+            "version": "1.3.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/swissup/absolute-metapackage/swissup-absolute-metapackage-1.3.7.0.zip",
+                "shasum": "bb34a260e45c326910957c695a8a2599ad9229c2"
+            },
+            "require": {
+                "swissup/module-font-awesome": "^1.4.2",
+                "swissup/module-slick-carousel": "^1.3.3",
+                "swissup/module-theme-editor-swissup-absolute": "^1.3.1",
+                "swissup/theme-frontend-absolute": "^1.3.7"
+            },
+            "type": "metapackage",
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "Absolute Theme for Magento 2.x"
+        },
+        {
+            "name": "swissup/module-codemirror",
+            "version": "1.1.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swissup/module-codemirror.git",
+                "reference": "fd0d58f4df3d24aaa542bdb5a4424d0a475b5845"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swissup/module-codemirror/zipball/fd0d58f4df3d24aaa542bdb5a4424d0a475b5845",
+                "reference": "fd0d58f4df3d24aaa542bdb5a4424d0a475b5845",
+                "shasum": ""
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Swissup\\Codemirror\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Versatile text editor implemented in JavaScript for the browser. ",
+            "time": "2021-01-22T08:07:51+00:00"
+        },
+        {
+            "name": "swissup/module-core",
+            "version": "1.12.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/swissup/module-core/swissup-module-core-1.12.4.0.zip",
+                "shasum": "581d1e91f880d4dc35d783adf5fcf0dd0a062855"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Swissup\\Core\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "Swissup core module. It's purpose is to add Swissup menu and config entries"
+        },
+        {
+            "name": "swissup/module-font-awesome",
+            "version": "1.4.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/swissup/module-font-awesome/swissup-module-font-awesome-1.4.2.0.zip",
+                "shasum": "d8074255f5d44416fd38fdae94d8e2974d424078"
+            },
+            "require": {
+                "swissup/module-core": "^1.10.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Swissup\\FontAwesome\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "FontAwesome for Magento2",
+            "keywords": [
+                "font",
+                "font awesome",
+                "font-awesome",
+                "fontawesome",
+                "icons"
+            ]
+        },
+        {
+            "name": "swissup/module-marketplace",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swissup/module-marketplace.git",
+                "reference": "e455aab0220e61f4194c85f82904907509a3f491"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swissup/module-marketplace/zipball/e455aab0220e61f4194c85f82904907509a3f491",
+                "reference": "e455aab0220e61f4194c85f82904907509a3f491",
+                "shasum": ""
+            },
+            "require": {
+                "composer/composer": "*",
+                "magento/framework": ">=101.0",
+                "magento/module-backend": ">=100.2",
+                "magento/module-catalog": "*",
+                "magento/module-cms": "*",
+                "magento/module-deploy": ">=100.0",
+                "magento/module-theme": "*",
+                "magento/module-ui": ">=101.0",
+                "monolog/monolog": "*",
+                "psr/log": "*",
+                "symfony/console": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Swissup\\Marketplace\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "One-Click modules and themes downloader/installer",
+            "keywords": [
+                "Module Manager",
+                "installer",
+                "magento marketplace",
+                "marketplace",
+                "theme manager"
+            ],
+            "support": {
+                "issues": "https://github.com/swissup/module-marketplace/issues",
+                "source": "https://github.com/swissup/module-marketplace/tree/1.8.1"
+            },
+            "time": "2021-03-15T09:21:27+00:00"
+        },
+        {
+            "name": "swissup/module-slick-carousel",
+            "version": "1.3.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/swissup/module-slick-carousel/swissup-module-slick-carousel-1.3.3.0.zip",
+                "shasum": "1e5d7b07fce8e6d644dcfc8c602939d057cd578e"
+            },
+            "type": "magento2-module",
+            "extra": {
+                "swissup": {
+                    "links": {
+                        "docs": "http://docs.swissuplabs.com/m2/extensions/slick-carousel/",
+                        "changelog": "http://docs.swissuplabs.com/m2/extensions/slick-carousel/changelog/"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Swissup\\SlickCarousel\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "the last carousel you'll ever need for magento2",
+            "keywords": [
+                "carousel",
+                "slick carousel",
+                "slider"
+            ]
+        },
+        {
+            "name": "swissup/module-theme-editor",
+            "version": "1.9.6",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/swissup/module-theme-editor/swissup-module-theme-editor-1.9.6.0.zip",
+                "shasum": "a871301d8778d46b403fa694d8b48f5be712fb61"
+            },
+            "require": {
+                "swissup/module-codemirror": "^1.1.8"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Swissup\\ThemeEditor\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "Theme styles editing extension from Swissup"
+        },
+        {
+            "name": "swissup/module-theme-editor-swissup-absolute",
+            "version": "1.3.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/swissup/module-theme-editor-swissup-absolute/swissup-module-theme-editor-swissup-absolute-1.3.1.0.zip",
+                "shasum": "5e194fb96dfc51967befd9c7eeffdec2c3190d9f"
+            },
+            "require": {
+                "swissup/module-theme-editor": "^1.9.6"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Swissup\\ThemeEditorSwissupAbsolute\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "Theme styles for Swissup Absolute theme"
+        },
+        {
+            "name": "swissup/theme-frontend-absolute",
+            "version": "1.3.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/swissup/theme-frontend-absolute/swissup-theme-frontend-absolute-1.3.7.0.zip",
+                "shasum": "a3151b76f04780367d511b6dd7b9d64fd32b541f"
+            },
+            "type": "magento2-theme",
+            "extra": {
+                "marketplace": {
+                    "gallery": [
+                        "https://docs.swissuplabs.com/images/marketplace/theme-frontend-absolute.png"
+                    ],
+                    "links": {
+                        "docs": "https://docs.swissuplabs.com/m2/themes/absolute/",
+                        "changelog": "https://docs.swissuplabs.com/m2/themes/absolute/changelog/"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ]
+            },
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "Absolute Theme for Magento 2",
+            "keywords": [
+                "absolute",
+                "free theme",
+                "responsive template",
+                "responsive theme",
+                "template",
+                "theme"
+            ]
+        },
+        {
             "name": "symfony/console",
             "version": "v4.4.23",
             "source": {
@@ -20843,6 +21124,44 @@
                 "proprietary"
             ],
             "description": "Tools for communicating with Vertex Cloud and Vertex O-Series"
+        },
+        {
+            "name": "wbcomdesigns/module-core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wbcomdesigns/wbcom-core-module-magento.git",
+                "reference": "add357be20c86c70312cb7aacfac970968875ed1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wbcomdesigns/wbcom-core-module-magento/zipball/add357be20c86c70312cb7aacfac970968875ed1",
+                "reference": "add357be20c86c70312cb7aacfac970968875ed1",
+                "shasum": ""
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Wbcom\\Core\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Wbcom",
+                    "email": "support@wbcomdesigns.com",
+                    "homepage": "https://zerodesk.wbcomdesigns.com",
+                    "role": "Support"
+                }
+            ],
+            "description": "core module to manage all other modules related to wbcom",
+            "time": "2019-12-20T06:00:12+00:00"
         },
         {
             "name": "webimpress/safe-writer",
@@ -26701,7 +27020,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "wbcomdesigns/module-core": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
