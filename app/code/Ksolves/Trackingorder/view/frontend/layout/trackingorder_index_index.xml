@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Ksolves Team
+ * @copyright Copyright (c) 2020 Ksolves (https://www.ksolves.com)
+ * @package Ksolves_Trackingorder
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<head>
+  		<css src="Ksolves_Trackingorder::css/bt.css"/>  
+   		<css src="Ksolves_Trackingorder::css/style.css"/>  
+	</head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Ksolves\Trackingorder\Block\Index" name="trackingorder_index" template="Ksolves_Trackingorder::trackorder.phtml">
+            </block>
+        </referenceContainer>
+    </body>
+</page>

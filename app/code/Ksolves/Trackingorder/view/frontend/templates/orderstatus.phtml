@@ -1,0 +1,174 @@
+<?php
+$orderdata                 = $block->getOrderData() ;
+$orderIncrementId          = $orderdata->getIncrementId();
+$date                      = $orderdata['created_at'];
+$day                       = date('l', strtotime($date));
+$month                     = date('F jS Y ',strtotime($date));
+$status                    = $orderdata['status'];
+$statusCode                = $block->getOrderStatus($status);
+$billingInfo               = $block->getBillingInfo($orderdata);
+$currency_symbol           = $block->getCurrencySymbol($orderdata);
+$productType               = $block->getOrderProductType($orderdata);
+?>
+<div class="trackingWrapper">
+	<div class="flex mb-25" >
+	    <div class="order-info-unit" ><span class="primary-text" >Order ID:</span>#<?= $orderIncrementId;?></div>
+	    <div class="order-info-unit" ><span class="primary-text" >Order Date:</span>#<?= $month;?></div>
+	    <div class="order-info-unit" ><span class="primary-text" >Order Status:</span> #<?= $statusCode;?></div>
+	</div>
+    <div class="mb-25 order-step-outer">
+	    <div class="justify-content-between progress-bar ">
+		   <div class="order-stepwizard-step">
+		    <?php if($status == 'pending' || $status == 'STATE_OPEN' || $status == 'paypal_canceled_reversal') { ?>
+			    <div class="order-stepwizard-img-set" >
+				    <div class="order-stepwizard-img active">
+				    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/basket-white.svg'); ?>" alt="order-track" /></div>
+				    </div>
+			    	<p><span class="d-none-mobile" >Items</span> Ordered</p>
+			<?php  } else { ?>
+			    <div class="order-stepwizard-img">
+			           <img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/basket.svg'); ?>" alt="order-track" />
+			            </div>
+			          <p><span class="d-none-mobile" >Items</span> Ordered</p>
+			<?php  } ?>
+			</div>
+			<div class="order-stepwizard-step">
+		<?php if($status == 'processing' || $status == 'pending_payment' || $status == 'payment_review' || $status == 'pending_paypal') { ?>
+		    <div class="order-stepwizard-img-set" >
+			    <div class="order-stepwizard-img active">
+			    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-processing-white.svg'); ?>" alt="order-track" /></div>
+			    </div>
+		    	<p><span class="d-none-mobile" >Order</span> Processing</p>
+		<?php  } else { ?>
+		    <div class="order-stepwizard-img">
+		           <img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-processing.svg'); ?>" alt="order-track" />
+		            </div>
+		          <p><span class="d-none-mobile" >Order</span> Processing</p>
+		<?php  } ?>
+			</div>
+			<?php if($status == 'holded') { ?>
+			<div class="order-stepwizard-step">		
+		    <div class="order-stepwizard-img-set" >
+			    <div class="order-stepwizard-img active">
+			    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-holded-white.svg'); ?>" alt="order-track" /></div>
+			    </div>
+		    	<p><span class="d-none-mobile" >Order</span> Holded</p>
+			</div>
+	<?php  } 
+			if($status == 'canceled') { ?>
+			<div class="order-stepwizard-step">
+
+		    <div class="order-stepwizard-img-set" >
+			    <div class="order-stepwizard-img active">
+			    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-cancel-white.svg'); ?>" alt="order-track" /></div>
+			    </div>
+		    	<p><span class="d-none-mobile" >Order</span> Cancelled</p>
+
+			</div>
+	<?php  } ?>
+			<div class="order-stepwizard-step">
+		<?php if($status == 'complete') { ?>
+		    <div class="order-stepwizard-img-set" >
+			    <div class="order-stepwizard-img active">
+			    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-complete-white.svg'); ?>" alt="order-track" /></div>
+			    </div>
+		    	<p><span class="d-none-mobile" >Order</span> Completed</p>
+		<?php  } else { ?>
+		    <div class="order-stepwizard-img">
+		           <img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-complete.svg'); ?>" alt="order-track" />
+		            </div>
+		          <p><span class="d-none-mobile" >Order</span> Completed</p>
+		<?php  } ?>
+			</div>
+			<div class="order-stepwizard-step">
+		<?php if($status == 'closed') { ?>
+		    <div class="order-stepwizard-img-set" >
+			    <div class="order-stepwizard-img active">
+			    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-closed-white.svg'); ?>" alt="order-track" /></div>
+			    </div>
+		    	<p><span class="d-none-mobile" >Order</span> Closed</p>
+		<?php  } else { ?>
+		    <div class="order-stepwizard-img">
+		           <img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-closed.svg'); ?>" alt="order-track" />
+		            </div>
+		          <p><span class="d-none-mobile" >Order</span> Closed</p>
+		<?php  } ?>
+			</div>
+		</div>
+	</div>
+	<div class="product data items"
+     data-mage-init='{"mage/tabs": {"openedState": "active", "animate": {"duration": 100}, "active": 0, "disabled": [], "disabledState": "disabled"}}'>
+	    <div class="item title" data-role="collapsible">
+	        <a class="switch" data-toggle="trigger" href="#tab-ordered">Items Orderd</a>
+	    </div>
+	    <div id="tab-ordered" class="item content" data-role="content"><?= $block->getItemsOrderedData();?></div>
+  <?php if($block->invoiceData($orderdata)) { ?>
+	    <div class="item title" data-role="collapsible">
+	        <a class="switch" data-toggle="trigger" href="#tab-invoices">Invoice</a>
+	    </div>
+	    <div id="tab-invoices" class="item content" data-role="content"><?= $block->getInvoiceData();?></div>
+  <?php }
+		if ($block->shipmentData($orderdata)) { ?>
+	    <div class="item title" data-role="collapsible">
+	        <a class="switch" data-toggle="trigger" href="#tab-shipments">Shipments</a>
+	    </div>
+	    <div id="tab-shipments" class="item content" data-role="content"><?= $block->getShipmentData();?></div>
+  <?php }
+		if ($block->refundsData($orderdata)) { ?>
+	    <div class="item title" data-role="collapsible">
+	        <a class="switch" data-toggle="trigger" href="#tab-refunds">Refunds</a>
+	    </div>
+	    <div id="tab-refunds" class="item content" data-role="content"><?= $block->getRefundsData();?></div>
+  <?php } ?>
+	</div>
+</div>     
+<div class="block block-order-details-view">
+	<div class="block-title">
+		<strong>Order Information</strong>
+	</div>
+	<div class="block-content">
+  <?php if (!($productType == "downloadable" || $productType == "virtual")) 
+        { ?>
+		<div class="box box-order-shipping-address">
+            <strong class="box-title">
+            	<span>Shipping Address</span>
+            </strong>
+            <div class="box-content"><?= $block->getShippingInfo($orderdata);?></div>
+        </div>
+        <div class="box box-order-shipping-method">
+            <strong class="box-title">
+                <span>Shipping Method</span>
+            </strong>
+            <div class="box-content"><?= $orderdata['shipping_description'];?></div>
+            <strong class="box-title">
+                <span>Shipping Amount</span>
+            </strong>
+            <div class="box-content"><?= $currency_symbol.number_format($orderdata['base_shipping_amount'], 2);?>
+            </div>
+        </div>
+   <?php } ?>
+		<div class="box box-order-billing-address">
+            <strong class="box-title">
+                <span>Billing Address</span>
+            </strong>
+            <div class="box-content"><?= $block->getBillingInfo($orderdata);?></div>
+        </div>
+		<div class="box box-order-billing-method">
+            <strong class="box-title">
+                <span>Payment Method</span>
+            </strong>
+            <div class="box-content">
+                <dl class="payment-method checkmemo">
+                    <dt class="title"><?= $orderdata->getPayment()->getMethodInstance()->getTitle();?></dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>          
+<script>
+    require([
+        'jquery',
+        'tabs'], function ($) {
+        $("#element").tabs();
+    });
+</script>
