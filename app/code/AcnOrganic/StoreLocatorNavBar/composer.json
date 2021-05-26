@@ -1,0 +1,16 @@
+{
+    "name": "acnorganic/module-customslidermodule",
+    "description": "Module to custom home slider bar",
+    "type": "magento2-module",
+    "license": "OSL",
+    "version": "1.0.0",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "AcnOrganic\\StoreLocatorNavBar\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
