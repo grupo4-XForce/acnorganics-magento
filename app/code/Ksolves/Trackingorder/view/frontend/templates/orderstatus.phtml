@@ -24,12 +24,12 @@ $productType               = $block->getOrderProductType($orderdata);
 				    <div class="order-stepwizard-img active">
 				    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/basket-white.svg'); ?>" alt="order-track" /></div>
 				    </div>
-			    	<p><span class="d-none-mobile" >Items</span> Ordered</p>
+			    	<p><span class="d-none-mobile" >Itens</span> Ordered</p>
 			<?php  } else { ?>
 			    <div class="order-stepwizard-img">
 			           <img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/basket.svg'); ?>" alt="order-track" />
 			            </div>
-			          <p><span class="d-none-mobile" >Items</span> Ordered</p>
+			          <p><span class="d-none-mobile" >Itens</span> Ordered</p>
 			<?php  } ?>
 			</div>
 			<div class="order-stepwizard-step">
@@ -38,7 +38,7 @@ $productType               = $block->getOrderProductType($orderdata);
 			    <div class="order-stepwizard-img active">
 			    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-processing-white.svg'); ?>" alt="order-track" /></div>
 			    </div>
-		    	<p><span class="d-none-mobile" >Order</span> Processing</p>
+		    	<p><span class="d-none-mobile" >Ordem</span> Processing</p>
 		<?php  } else { ?>
 		    <div class="order-stepwizard-img">
 		           <img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-processing.svg'); ?>" alt="order-track" />
@@ -47,14 +47,14 @@ $productType               = $block->getOrderProductType($orderdata);
 		<?php  } ?>
 			</div>
 			<?php if($status == 'holded') { ?>
-			<div class="order-stepwizard-step">		
+			<div class="order-stepwizard-step">
 		    <div class="order-stepwizard-img-set" >
 			    <div class="order-stepwizard-img active">
 			    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-holded-white.svg'); ?>" alt="order-track" /></div>
 			    </div>
-		    	<p><span class="d-none-mobile" >Order</span> Holded</p>
+		    	<p><span class="d-none-mobile" >Ordem</span> Holded</p>
 			</div>
-	<?php  } 
+	<?php  }
 			if($status == 'canceled') { ?>
 			<div class="order-stepwizard-step">
 
@@ -62,7 +62,7 @@ $productType               = $block->getOrderProductType($orderdata);
 			    <div class="order-stepwizard-img active">
 			    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-cancel-white.svg'); ?>" alt="order-track" /></div>
 			    </div>
-		    	<p><span class="d-none-mobile" >Order</span> Cancelled</p>
+		    	<p><span class="d-none-mobile" >Ordem</span> Cancelled</p>
 
 			</div>
 	<?php  } ?>
@@ -72,12 +72,12 @@ $productType               = $block->getOrderProductType($orderdata);
 			    <div class="order-stepwizard-img active">
 			    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-complete-white.svg'); ?>" alt="order-track" /></div>
 			    </div>
-		    	<p><span class="d-none-mobile" >Order</span> Completed</p>
+		    	<p><span class="d-none-mobile" >Ordem</span> Completed</p>
 		<?php  } else { ?>
 		    <div class="order-stepwizard-img">
 		           <img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-complete.svg'); ?>" alt="order-track" />
 		            </div>
-		          <p><span class="d-none-mobile" >Order</span> Completed</p>
+		          <p><span class="d-none-mobile" >Ordem</span> Completed</p>
 		<?php  } ?>
 			</div>
 			<div class="order-stepwizard-step">
@@ -86,12 +86,12 @@ $productType               = $block->getOrderProductType($orderdata);
 			    <div class="order-stepwizard-img active">
 			    	<img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-closed-white.svg'); ?>" alt="order-track" /></div>
 			    </div>
-		    	<p><span class="d-none-mobile" >Order</span> Closed</p>
+		    	<p><span class="d-none-mobile" >Ordem</span> Closed</p>
 		<?php  } else { ?>
 		    <div class="order-stepwizard-img">
 		           <img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/order-closed.svg'); ?>" alt="order-track" />
 		            </div>
-		          <p><span class="d-none-mobile" >Order</span> Closed</p>
+		          <p><span class="d-none-mobile" >Ordem</span> Closed</p>
 		<?php  } ?>
 			</div>
 		</div>
@@ -99,35 +99,35 @@ $productType               = $block->getOrderProductType($orderdata);
 	<div class="product data items"
      data-mage-init='{"mage/tabs": {"openedState": "active", "animate": {"duration": 100}, "active": 0, "disabled": [], "disabledState": "disabled"}}'>
 	    <div class="item title" data-role="collapsible">
-	        <a class="switch" data-toggle="trigger" href="#tab-ordered">Items Orderd</a>
+	        <a class="switch" data-toggle="trigger" href="#tab-ordered">Itens Comprados</a>
 	    </div>
 	    <div id="tab-ordered" class="item content" data-role="content"><?= $block->getItemsOrderedData();?></div>
   <?php if($block->invoiceData($orderdata)) { ?>
 	    <div class="item title" data-role="collapsible">
-	        <a class="switch" data-toggle="trigger" href="#tab-invoices">Invoice</a>
+	        <a class="switch" data-toggle="trigger" href="#tab-invoices">Fatura</a>
 	    </div>
 	    <div id="tab-invoices" class="item content" data-role="content"><?= $block->getInvoiceData();?></div>
   <?php }
 		if ($block->shipmentData($orderdata)) { ?>
 	    <div class="item title" data-role="collapsible">
-	        <a class="switch" data-toggle="trigger" href="#tab-shipments">Shipments</a>
+	        <a class="switch" data-toggle="trigger" href="#tab-shipments">Envio</a>
 	    </div>
 	    <div id="tab-shipments" class="item content" data-role="content"><?= $block->getShipmentData();?></div>
   <?php }
 		if ($block->refundsData($orderdata)) { ?>
 	    <div class="item title" data-role="collapsible">
-	        <a class="switch" data-toggle="trigger" href="#tab-refunds">Refunds</a>
+	        <a class="switch" data-toggle="trigger" href="#tab-refunds">Reembolsos</a>
 	    </div>
 	    <div id="tab-refunds" class="item content" data-role="content"><?= $block->getRefundsData();?></div>
   <?php } ?>
 	</div>
-</div>     
+</div>
 <div class="block block-order-details-view">
 	<div class="block-title">
-		<strong>Order Information</strong>
+		<strong>Informações do Pedido</strong>
 	</div>
 	<div class="block-content">
-  <?php if (!($productType == "downloadable" || $productType == "virtual")) 
+  <?php if (!($productType == "downloadable" || $productType == "virtual"))
         { ?>
 		<div class="box box-order-shipping-address">
             <strong class="box-title">
@@ -137,11 +137,11 @@ $productType               = $block->getOrderProductType($orderdata);
         </div>
         <div class="box box-order-shipping-method">
             <strong class="box-title">
-                <span>Shipping Method</span>
+                <span>Método de Envio</span>
             </strong>
             <div class="box-content"><?= $orderdata['shipping_description'];?></div>
             <strong class="box-title">
-                <span>Shipping Amount</span>
+                <span>Valor do Frete</span>
             </strong>
             <div class="box-content"><?= $currency_symbol.number_format($orderdata['base_shipping_amount'], 2);?>
             </div>
@@ -149,13 +149,13 @@ $productType               = $block->getOrderProductType($orderdata);
    <?php } ?>
 		<div class="box box-order-billing-address">
             <strong class="box-title">
-                <span>Billing Address</span>
+                <span>Endereço de Cobrança</span>
             </strong>
             <div class="box-content"><?= $block->getBillingInfo($orderdata);?></div>
         </div>
 		<div class="box box-order-billing-method">
             <strong class="box-title">
-                <span>Payment Method</span>
+                <span>Método de Pagamento</span>
             </strong>
             <div class="box-content">
                 <dl class="payment-method checkmemo">
@@ -164,7 +164,7 @@ $productType               = $block->getOrderProductType($orderdata);
             </div>
         </div>
     </div>
-</div>          
+</div>
 <script>
     require([
         'jquery',
