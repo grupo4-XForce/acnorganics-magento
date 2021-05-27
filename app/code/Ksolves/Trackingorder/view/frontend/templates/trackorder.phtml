@@ -42,14 +42,14 @@ if ($moduleStatus == 0) {
 <div class="luma-form flex" >
   <div class="luma-form-left flex-center flex-column" >
       <img src="<?= $this->getViewFileUrl('Ksolves_Trackingorder::images/Icon.svg'); ?>" class="luma-track-order-img" alt="order-truck">
-      <h2 class="font-weight-bold mb-0" >Track your Order</h2>
+      <h2 class="font-weight-bold mb-0" >Acompanhe seu Pedido</h2>
   </div>
   <div class="luma-form-right" >
     <form  id="track-order" name="track-order" action="<?= $block->getBaseUrl().'trackingorder/index/search'; ?>" class="luma-form-outer" method="post" enctype='multipart/form-data'  data-mage-init='{"validation": {}}'>
       <fieldset class="fieldset">
           <div class="field order_id">
               <div class="control mb-25">
-                  <label class="luma-form-label" >Order ID</label>
+                  <label class="luma-form-label" >Número de Ordem</label>
                   <input class="luma-form-field" name="order_id" id="orderId" type="text" placeholder="Enter Order ID" autocomplete="off" data-validate="{required:true,'validate-number':true}">
                   <span id="check-order-msg" ></span>
               </div>
@@ -63,7 +63,7 @@ if ($moduleStatus == 0) {
           </div>
       </fieldset>
       <div class="actions-toolbar text-center">
-            <button class="primary-btn" type="submit" title="Submit" id="submit">Track Order </button>
+            <button class="primary-btn" type="submit" title="Submit" id="submit">Acompanhe seu Pedido </button>
       </div>
     </form>
   </div>
